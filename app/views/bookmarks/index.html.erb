@@ -6,7 +6,7 @@
 <section class="list-body">
   <% @bookmarks.each do |bookmark| %>
     <div class="card mb-3">
-      <%= link_to list_bookmarks_path(bookmark) do %>
+      <%= link_to list_bookmarks_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Sure?" } do %>
         <div class="card-body">
           <%= bookmark.comment %>
         </div>
