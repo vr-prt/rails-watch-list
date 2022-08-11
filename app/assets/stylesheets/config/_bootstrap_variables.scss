@@ -23,3 +23,11 @@ $border-radius-lg: 2px;
 $border-radius-sm: 2px;
 
 // Override other variables below!
+a {
+  text-decoration: none !important;
+}
+
+.container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
