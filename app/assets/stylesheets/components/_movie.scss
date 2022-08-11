@@ -1,0 +1,13 @@
+.movie-cover {
+  height: 250px;
+  background-position: center;
+  background-size: cover;
+}
+
+.movie .card-title {
+  font-weight: bold;
+}
+
+.movie .fa-star {
+  color: $orange;
+}

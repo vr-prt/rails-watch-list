@@ -1,0 +1,16 @@
+<div class="lists-header d-flex justify-content-between align-items-center mb-3">
+  <h1><%= @list.name.capitalize %> bookmarks</h1>
+  <%= link_to 'New bookmark', new_list_bookmark_path, class: "btn btn-primary" %>
+</div>
+
+<section class="list-body">
+  <% @bookmarks.each do |bookmark| %>
+    <div class="card mb-3">
+      <%= link_to list_bookmarks_path(bookmark) do %>
+        <div class="card-body">
+          <%= bookmark.comment %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</section>
