@@ -1,6 +1,19 @@
+.navbar {
+  background: $primary !important;
+}
+
+.navbar a {
+  color: white;
+  transition: .3s;
+
+  &:hover {
+    text-decoration: underline !important;
+    color: white;
+  }
+}
+
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
 }
 
 .navbar-lewagon .navbar-collapse {
