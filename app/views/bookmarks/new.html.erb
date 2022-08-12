@@ -1,4 +1,4 @@
-<h1 class="mb-3">Add a bookmark to <%= @list.name %></h1>
+<h1 class="mb-3">Add a movie to <%= @list.name %></h1>
 <%= simple_form_for([@list, @bookmark]) do |f| %>
   <%= f.association :movie %>
   <%= f.input :comment %>
