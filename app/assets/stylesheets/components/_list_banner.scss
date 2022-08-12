@@ -1,7 +1,26 @@
-.list-banner {
-  height: 300px;
+.custom-banner {
+  height: 350px;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 40px;
   color: white;
+
+  i {
+    margin-right: 10px;
+  }
+
+  a {
+    color: white;
+  }
+}
+
+.banner-link {
+  font-size: 30px;
+}
+
+.banner-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 }

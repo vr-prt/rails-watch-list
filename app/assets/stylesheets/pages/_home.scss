@@ -1,1 +1,10 @@
 // Specific CSS for your home-page
+.btn-home {
+  background-color: white;
+  color: $primary !important;
+
+  &:hover {
+    border-color: white;
+    color: white !important;
+  }
+}

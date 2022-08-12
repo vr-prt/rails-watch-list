@@ -1,10 +1,16 @@
-
-
-<div class="mb-4 d-flex align-items-center list-banner" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('<%= cl_image_path @list.image.key, crop: :fill, gravity: :auto %>')">
-  <div class="container">
-    <h1><%= @list.name.capitalize %> movies list</h1>
-    <p>Add movies to this list</p>
-    <%= link_to 'Add a movie', new_list_bookmark_path(@list), class: "btn btn-primary" %>
+<div class="mb-4 d-flex p-4 custom-banner" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('<%= cl_image_path @list.image.key, crop: :fill, gravity: :auto %>')">
+  <div class="container d-flex justify-content-between flex-column">
+    <div>
+      <%= link_to root_path, class: "navbar-brand", class: "d-flex align-items-center banner-link" do %>
+        <i class="fa-solid fa-clapperboard"></i>
+        <p class="m-0">Home</p>
+      <% end %>
+    </div>
+    <div class="banner-body">
+      <h1><%= @list.name.capitalize %> movies list</h1>
+      <p>Add movies to this list</p>
+      <%= link_to 'Add a movie', new_list_bookmark_path(@list), class: "btn btn-primary" %>
+    </div>
   </div>
 </div>
 
