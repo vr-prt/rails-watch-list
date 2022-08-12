@@ -1,33 +1,37 @@
-<div class="lists-header d-flex justify-content-between align-items-center mb-3">
-  <h1><%= @list.name.capitalize %> movies list</h1>
-  <%= link_to 'Add a movie', new_list_bookmark_path(@list), class: "btn btn-primary" %>
+
+
+<div class="mb-4 d-flex align-items-center list-banner" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('<%= cl_image_path @list.image.key, crop: :fill, gravity: :auto %>')">
+  <div class="container">
+    <h1><%= @list.name.capitalize %> movies list</h1>
+    <p>Add movies to this list</p>
+    <%= link_to 'Add a movie', new_list_bookmark_path(@list), class: "btn btn-primary" %>
+  </div>
 </div>
 
-<%= cl_image_tag @list.image.key, height: 300, width: 400, crop: :fill %>
-
-<div class="row row-cols-1 row-cols-md-2 g-4">
-  <% @bookmarks.each do |bookmark| %>
-    <div class="col movie">
-      <div class="card">
-        <div style="background-image: url('<%= bookmark.movie.poster_url %>')" class="movie-cover"></div>
-        <div class="card-body">
-          <div class="card-body-header d-flex justify-content-between">
-            <h5 class="card-title"><%= bookmark.movie.title %></h5>
-            <p><%= bookmark.movie.rating %> <i class="fa-solid fa-star"></i></p>
-          </div>
-          <p class="card-text"><%= bookmark.movie.overview %></p>
-          <div class="d-flex justify-content-between">
-            <div>
-              <p class="card-text"><i class="fa-solid fa-quote-left"></i> <%= bookmark.comment %></p>
+<div class="container body">
+  <div class="row row-cols-1 row-cols-md-2 g-4 mt-4">
+    <% @bookmarks.each do |bookmark| %>
+      <div class="col movie">
+        <div class="card">
+          <div style="background-image: url('<%= bookmark.movie.poster_url %>')" class="movie-cover"></div>
+          <div class="card-body">
+            <div class="card-body-header d-flex justify-content-between">
+              <h5 class="card-title"><%= bookmark.movie.title %></h5>
+              <p><%= bookmark.movie.rating %> <i class="fa-solid fa-star"></i></p>
             </div>
-            <%# <%= raise %>
-            <%= link_to bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
-              <i class="fa-solid fa-trash-can"></i>
-            <% end %>
+            <p class="card-text"><%= bookmark.movie.overview %></p>
+            <div class="d-flex justify-content-between">
+              <div>
+                <p class="card-text"><i class="fa-solid fa-quote-left"></i> <%= bookmark.comment %></p>
+              </div>
+              <%= link_to bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+                <i class="fa-solid fa-trash-can"></i>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
 
+  </div>
 </div>

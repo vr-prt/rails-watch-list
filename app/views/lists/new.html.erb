@@ -1,6 +1,8 @@
-<h1 class="mb-3">Create a movie list</h1>
-<%= simple_form_for(@list) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :image, as: :file %>
-  <%= f.button :submit, class: "btn btn-primary" %>
-<% end %>
+<div class="container body">
+  <h1 class="mb-3">Create a movie list</h1>
+  <%= simple_form_for(@list) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :image, as: :file %>
+    <%= f.button :submit, class: "btn btn-primary" %>
+  <% end %>
+</div>
