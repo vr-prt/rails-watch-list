@@ -3,6 +3,8 @@
   <%= link_to 'Add a movie', new_list_bookmark_path(@list), class: "btn btn-primary" %>
 </div>
 
+<%= cl_image_tag @list.image.key, height: 300, width: 400, crop: :fill %>
+
 <div class="row row-cols-1 row-cols-md-2 g-4">
   <% @bookmarks.each do |bookmark| %>
     <div class="col movie">
