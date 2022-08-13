@@ -1,5 +1,5 @@
 <div class="mb-4 d-flex p-4 custom-banner" style="background-color: #253D56">
-  <div class="container d-flex justify-content-between flex-column">
+  <div class="container d-flex justify-content-between flex-column" data-controller="banner">
     <div>
       <%= link_to root_path, class: "navbar-brand", class: "d-flex align-items-center banner-link" do %>
         <i class="fa-solid fa-clapperboard"></i>
@@ -8,7 +8,7 @@
     </div>
     <div class="banner-body">
       <h1>Movies list</h1>
-      <p>Add movies to this list</p>
+      <p>Add a new movies list!</p>
       <%= link_to 'New list', new_list_path, class: "btn btn-home" %>
     </div>
   </div>
